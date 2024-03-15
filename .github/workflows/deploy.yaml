@@ -11,7 +11,7 @@ defaults:
     shell: bash
 
 jobs:
-h  build:
+  build:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.120.4
