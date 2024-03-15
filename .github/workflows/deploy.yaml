@@ -51,5 +51,8 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           passphrase: ""
           script: |
-            sudo rm -rf ${{ secrets.DEPLOYMENT_PATH }}/*
-            sudo cp -r ${{ github.workspace }}/public/* ${{ secrets.DEPLOYMENT_PATH }}
+            if [ -z "$DEPLOYMENT_PATH" ]; then
+              echo "Error: Deployment path not provided. Aborting deployment."
+              exit 1
+            fi
+            rsync -av --delete "${{ github.workspace }}/public/" "$DEPLOYMENT_PATH"
