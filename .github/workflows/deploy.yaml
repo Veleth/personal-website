@@ -56,9 +56,9 @@ jobs:
         uses: burnett01/rsync-deployments@7.0.0
         with:
           switches: -avzr --delete
-          source_dir: public
+          path: public
           remote_host: ${{ secrets.SSH_HOST }}
           remote_user: ${{ secrets.SSH_USERNAME }}
           remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
           remote_port: ${{ secrets.SSH_PORT }}
-          remote_path: ${{ secrets.DEPLOYMENT_PATH }}
+          remote_path: ${{ vars.DEPLOYMENT_PATH }}
