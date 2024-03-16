@@ -1,6 +1,6 @@
 # Education
 
-In 2020, I earned my Bachelor's degree in Computer Science, followed the next year by a Master's degree in Computer Science with a specialization in Cybersecurity, both from the [Fundamental Problem Faculty](https://wppt.pwr.edu.pl) of the [Wrocław University of Science and Technology (Politechnika Wrocławska)](https://pwr.edu.pl).
+In 2020, I earned my Bachelor's degree in Computer Science, followed the next year by a Master's degree in Computer Science with a specialization in Cybersecurity, both from the [Fundamental Problem Faculty](https://wppt.pwr.edu.pl) of the [Wrocław University of Science and Technology (Politechnika Wrocławska)](https://pwr.edu.pl)
 
 # Work
 I started programming professionally in March 2019, and after graduating in 2021 it became full time. So far, I've primarily worked in e-commerce, with PHP-based applications.
@@ -18,11 +18,9 @@ My tech stack revolves around the PHP-Symfony-Shopware trinity, as most of my wo
 
 # Other technologies
 
-For my personal projects, I typically choose Python 3. I also keep trying to learn some Swift in my free time. I've briefly worked with Magento 1 and 2.
-
-During my time at the university, I've done some programming in: C, C++, C#, Java, Julia, Kotlin, Haskell, Prolog.
+For my personal projects, I typically choose Python 3. I also keep trying to learn some Swift in my free time. I've briefly worked with Magento 1 and 2
 
 # Other facts
-- I enjoy games of all kinds: board games, video games, pen and paper RPGs.
-- I accumulate books. I mean, I read books, but due to some mysterious circumstances the growth of my to-read outpaces my reading speed.
-- When it comes to sports, I swim and play tennis. I also love indoor bouldering, though my city lacks a nice gym.
+- I enjoy games of all kinds: board games, video games, pen and paper RPGs
+- I accumulate books. I mean, I read books, but due to some mysterious circumstances the growth of my to-read stack outpaces my reading speed
+- When it comes to sports, I swim and play tennis. I also love indoor bouldering, though my city lacks a nice gym
