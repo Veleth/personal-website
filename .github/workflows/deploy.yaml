@@ -51,8 +51,8 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           passphrase: ""
           script: |
-            if [ -z "$DEPLOYMENT_PATH" ]; then
+            if [ -z "${{ vars.DEPLOYMENT_PATH}}" ]; then
               echo "Error: Deployment path not provided. Aborting deployment."
               exit 1
             fi
-            rsync -av --delete "${{ github.workspace }}/public/" "$DEPLOYMENT_PATH"
+            rsync -av --delete "${{ github.workspace }}/public/" "${{ vars.DEPLOYMENT_PATH}}"
