@@ -1,6 +1,6 @@
 ---
-title: "My First Post"
+title: "Placeholder"
 date: 2023-03-21T17:42:05+01:00
 draft: false
 ---
-## TEST
+## Stay tuned. Stuff is coming here soon.
