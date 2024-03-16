@@ -1,0 +1,9 @@
+{
+    "list": [
+       {
+          "name": "Discovering a rare Shopware bug",
+          "url": "https://github.com/shopware/shopware/pull/3414",
+          "desc": "In late 2023, following a long and arduous debugging session, I have documented a really rare bug that was subsequently dubbed [NEXT-31699](https://issues.shopware.com/issues/NEXT-31699). I aim to write a post about this in the future."
+       }
+    ]
+ }

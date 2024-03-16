@@ -1,9 +1,19 @@
 {
     "list": [
        {
-          "name":"Personal website",
-          "url":"https://github.com/Veleth/personal-website",
-          "desc":"My personal website built with Hugo and the Cactus theme."
+          "name": "Personal website",
+          "url": "https://github.com/Veleth/personal-website",
+          "desc": "My website built with Hugo and deployed with Github Actions"
+       },
+       {
+         "name": "Little projects",
+         "url": "https://github.com/Veleth/Little_Projects",
+         "desc": "A collection of my tiny projects"
+       },
+       {
+         "name": "Compiler for a Pascal-like language",
+         "url": "https://github.com/Veleth/JFTT-Compiler",
+         "desc": "A compiler written in Python for one of my university courses"
        }
     ]
  }
