@@ -19,4 +19,4 @@ Config is in `.eslintrc.json` (ES2022 + browser globals, `eslint:recommended` ru
 
 # Other info
 ## Passphrase generator
-The wordlists come from (EFF)[https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt] and (Maciek Talaska)[https://github.com/MaciekTalaska/diceware-pl/blob/master/diceware-pl.txt]
+The wordlists come from [EFF](https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt) and [Maciek Talaska](https://github.com/MaciekTalaska/diceware-pl/blob/master/diceware-pl.txt)
