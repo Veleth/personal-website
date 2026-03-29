@@ -3,3 +3,7 @@
 /resources/_gen/
 
 .hugo_build.lock
+
+# NPM stuff - local only
+package-lock.json
+node_modules

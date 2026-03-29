@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div id="tools-list">
+  <h2>Tools</h2>
+  <p>{{ .Description }}</p>
+  <ul class="post-list">
+    {{ range .Pages }}
+    <li class="post-item">
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+      {{ with .Description }}<span class="meta"> — {{ . }}</span>{{ end }}
+    </li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

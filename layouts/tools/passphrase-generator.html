@@ -1,0 +1,118 @@
+{{ define "head_extras" }}
+<style>
+#passphrase-generator { max-width: 580px; }
+
+.pg-lang { display: flex; gap: .75rem; margin-bottom: 1.75rem; }
+.pg-lang label { cursor: pointer; color: #666; font-size: .9rem;
+  padding-bottom: 2px; border-bottom: 2px solid transparent; }
+.pg-lang label:has(input:checked) { color: #2bbc8a; border-color: #2bbc8a; }
+.pg-lang input[type="radio"] { display: none; }
+
+.pg-options { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+.pg-options label { display: flex; flex-direction: column; gap: .3rem; }
+.pg-options label.pg-full { grid-column: 1 / -1; flex-direction: row; align-items: center; gap: .5rem; }
+.pg-options label > span { font-size: .75rem; text-transform: uppercase; letter-spacing: .06em; color: #666; }
+.pg-options small { font-size: .72rem; color: #555; }
+.pg-options input[type="number"],
+.pg-options select { background: #161819; border: 1px solid #444; color: #c9cacc;
+  padding: .4rem .55rem; border-radius: 3px; font-size: .95rem; width: 100%; }
+.pg-options input[type="checkbox"] { width: 1rem; height: 1rem; accent-color: #2bbc8a; flex-shrink: 0; }
+
+#pg-generate { width: 100%; padding: .65rem; margin-bottom: 1.5rem;
+  background: #2bbc8a; color: #1d1f21; border: none; border-radius: 3px;
+  font-size: .9rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .08em; cursor: pointer; }
+#pg-generate:hover { background: #26aa7d; }
+#pg-generate:disabled { opacity: .45; cursor: not-allowed; }
+
+.pg-output { display: flex; align-items: center; gap: 1rem; padding: .85rem 1rem;
+  background: #161819; border: 1px solid #333; border-left: 3px solid #2bbc8a;
+  border-radius: 3px; margin-bottom: 1.5rem; }
+#pg-result { flex: 1; word-break: break-all; background: transparent;
+  font-size: 1.05rem; padding: 0; }
+#pg-copy { flex-shrink: 0; padding: .3rem .75rem; background: transparent;
+  border: 1px solid #555; color: #999; border-radius: 3px;
+  cursor: pointer; font-size: .8rem; }
+#pg-copy:hover { border-color: #2bbc8a; color: #2bbc8a; }
+
+.pg-history-label { font-size: .75rem; text-transform: uppercase;
+  letter-spacing: .06em; color: #555; margin: 0 0 .4rem; }
+#pg-history-list { list-style: none; padding: 0; margin: 0; }
+#pg-history-list li { padding: .35rem 0; border-bottom: 1px solid #252729;
+  color: #555; font-family: monospace; font-size: .9rem;
+  cursor: pointer; transition: color .4s; }
+#pg-history-list li:hover { color: #c9cacc; }
+#pg-history-list li:last-child { border-bottom: none; }
+#pg-history-list li.pg-copied { color: #2bbc8a; transition: color 0s; }
+
+@media (max-width: 420px) {
+  .pg-options { grid-template-columns: 1fr; }
+  .pg-options label.pg-full { grid-column: 1; }
+}
+</style>
+{{ end }}
+
+{{ define "main" }}
+<article class="post">
+  <h2 data-i18n="title">{{ .Title }}</h2>
+  <div id="passphrase-generator">
+
+    <div class="pg-lang">
+      <label><input type="radio" name="pg-lang" value="en" checked> EN</label>
+      <label><input type="radio" name="pg-lang" value="pl"> PL</label>
+    </div>
+
+    <div class="pg-options">
+      <label>
+        <span data-i18n="words">Words</span>
+        <input type="number" id="pg-word-count" value="4" min="1" max="12">
+        <small data-i18n="words-hint">4 or more recommended</small>
+      </label>
+
+      <label>
+        <span data-i18n="separator">Separator</span>
+        <select id="pg-separator">
+          <option value="-"  data-i18n="sep-hyphen">Hyphen (-)</option>
+          <option value="_"  data-i18n="sep-underscore">Underscore (_)</option>
+          <option value="."  data-i18n="sep-dot">Dot (.)</option>
+          <option value=" "  data-i18n="sep-space">Space ( )</option>
+          <option value="@"  data-i18n="sep-at">At (@)</option>
+          <option value="~"  data-i18n="sep-tilde">Tilde (~)</option>
+          <option value="*"  data-i18n="sep-asterisk">Asterisk (*)</option>
+          <option value="#"  data-i18n="sep-hash">Hash (#)</option>
+          <option value=""   data-i18n="sep-none">None</option>
+        </select>
+      </label>
+
+      <label>
+        <span data-i18n="capitalize">Capitalization</span>
+        <select id="pg-capitalize">
+          <option value="none"   data-i18n="cap-none">None</option>
+          <option value="all"    data-i18n="cap-all">All words</option>
+          <option value="random" data-i18n="cap-random">Random (≥1)</option>
+        </select>
+      </label>
+
+      <label class="pg-full">
+        <input type="checkbox" id="pg-number">
+        <span data-i18n="include-number">Include a number</span>
+      </label>
+    </div>
+
+    <button id="pg-generate" data-i18n="generate">Generate</button>
+
+    <div class="pg-output">
+      <code id="pg-result">—</code>
+      <button id="pg-copy" data-i18n="copy">Copy</button>
+    </div>
+
+    <div id="pg-history" style="display:none">
+      <p class="pg-history-label" data-i18n="history">Previous</p>
+      <ul id="pg-history-list"></ul>
+    </div>
+
+  </div>
+</article>
+{{- $script := resources.Get "js/passphrase-generator.js" | resources.Fingerprint -}}
+<script type="module" src="{{ $script.Permalink }}"></script>
+{{ end }}
