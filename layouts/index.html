@@ -109,6 +109,20 @@
   </section>
   {{ end }}
 
+  {{ $toolsPage := .Site.GetPage "tools" }}
+  {{ if and $toolsPage $toolsPage.Pages }}
+  <section id="tools">
+    <span class="h1"><a href="{{ $toolsPage.Permalink }}">Tools</a></span>
+    <ul class="post-list">
+      {{ range $toolsPage.Pages }}
+      <li class="post-item">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{ with .Description }}<span class="meta"> — {{ . }}</span>{{ end }}
+      </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
 
   <section id="achievements">
     <span class="h1">Achievements</a></span>
