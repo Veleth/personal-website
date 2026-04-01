@@ -1,0 +1,13 @@
+<ul>
+  {{ $icon_class_name := .Scratch.Get "icon_class_name"}}
+  <li>
+    <a class="icon" href="mailto:?subject={{ .Title }}&body=Check out this article: {{ .Permalink }}" aria-label="Email">
+      <i class="fas fa-envelope {{ $icon_class_name }}" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="#" aria-label="Copy URL" onclick="navigator.clipboard.writeText('{{ .Permalink }}'); return false;">
+      <i class="fas fa-link {{ $icon_class_name }}" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
