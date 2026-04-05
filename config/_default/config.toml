@@ -67,7 +67,7 @@ weight = 4
     link = "https://github.com/veleth"
   [[params.social]]
     name = "linkedin"
-    link = "https://www.linkedin.com/gabriel_tanski/"
+    link = "https://www.linkedin.com/in/gabriel-tanski/"
   [[params.social]]
     name = "email"
     link = "gabriel@gtanski.com"
